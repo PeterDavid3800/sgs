@@ -11,49 +11,49 @@ class CreateStudentsTable extends Migration
         $this->forge->addField([
             'id' => [
                 'type' => 'INT',
-                'constraint' => 11,
+                'constraint' => 5,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'name' => [
+            'first_name' => [
                 'type' => 'VARCHAR',
-                'constraint' => 100,
+                'constraint' => 255,
+            ],
+            'last_name' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
             ],
             'email' => [
                 'type' => 'VARCHAR',
-                'constraint' => 100,
+                'constraint' => 255,
             ],
-            'id_passport' => [
+            'phone_number' => [
                 'type' => 'VARCHAR',
-                'constraint' => 50,
+                'constraint' => 20,
             ],
-            'passport_photo' => [
+            'course' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
-            'high_school_diploma' => [
+            'hear_about' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
-            'undergrad_certificate' => [
+            'country' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
             'created_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
-            'updated_at' => [
-                'type' => 'DATETIME',
+                'type' => 'TIMESTAMP',
                 'null' => true,
             ],
         ]);
-        $this->forge->addKey('id', true);
-        $this->forge->createTable('students');
+        $this->forge->addPrimaryKey('id');
+        $this->forge->createTable('registrations');
     }
 
     public function down()
     {
-        $this->forge->dropTable('students');
+        $this->forge->dropTable('registrations');
     }
 }

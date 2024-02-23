@@ -6,15 +6,13 @@ use CodeIgniter\Model;
 
 class StudentModel extends Model
 {
-    protected $table            = 'students';
-    protected $primaryKey       = 'id';
+    protected $table = 'registrations'; // Update the table name
+    protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name', 'email', 'id_passport', 'passport_photo', 'high_school_diploma', 'undergrad_certificate'];
-
-    protected bool $allowEmptyInserts = false;
+    protected $allowedFields    = ['first_name', 'last_name', 'email', 'phone_number', 'course', 'hear_about', 'country', 'created_at']; // Update the allowed fields
 
     // Dates
     protected $useTimestamps = false;
@@ -39,5 +37,4 @@ class StudentModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
 }

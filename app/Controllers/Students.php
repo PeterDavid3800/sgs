@@ -33,7 +33,7 @@ class Students extends BaseController
         // Retrieve other form fields in a similar manner
 
         // Create an instance of the StudentModel
-        $studentModel = new StudentModel();
+        $studentModel = new \App\Models\StudentModel();
 
         // Insert the data into the database
         $data = [
